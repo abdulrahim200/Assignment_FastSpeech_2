@@ -1,0 +1,2 @@
+# Copy config/LJSpeech/model.yaml from the reference FastSpeech2 repo here.
+# Notebook retained that architecture and set multi_speaker: false, max_seq_len: 1000.

@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.log
+*.wav
+checkpoints/*.pth.tar

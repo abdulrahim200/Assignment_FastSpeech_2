@@ -1,0 +1,44 @@
+language: English
+dataset: Svarah
+speaker: speaker_01
+upstream_repo: ../FastSpeech2
+data:
+  train_manifest: ../data/manifests/english_train_final.csv
+  validation_manifest: ../data/manifests/english_validation_final.csv
+  train_npz_dir: ../data/processed/english/train
+  validation_npz_dir: ../data/processed/english/validation
+  preprocessed_dir: ../data/processed/english/fastspeech2_preprocessed
+  lexicon: ../data/mfa/english_us_arpa_final_preserved.dict
+outputs:
+  checkpoints: checkpoints
+  logs: ../Results/English/logs
+  generated_audio: ../Results/English/test_generated_audios
+audio:
+  sampling_rate: 22050
+  n_mel_channels: 80
+  mel_fmin: 0
+  mel_fmax: 8000
+  filter_length: 1024
+  hop_length: 256
+  win_length: 1024
+model:
+  multi_speaker: false
+  max_seq_len: 1000
+  architecture: FastSpeech2_LJSpeech_reference
+  vocoder: HiFi-GAN_LJSpeech
+training:
+  restore_step: 0
+  total_step: 5000
+  batch_size: 16
+  group_size: 4
+  warm_up_step: 1000
+  anneal_steps: []
+  log_step: 100
+  synth_step: 2000
+  val_step: 1000
+  save_step: 1000
+normalization:
+  pitch: phoneme_level
+  energy: phoneme_level
+  fit_statistics_on: training_split_only
+  outlier_filter: per_recording_IQR_1_5

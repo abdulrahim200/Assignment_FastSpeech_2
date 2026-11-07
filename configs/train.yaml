@@ -1,0 +1,2 @@
+# Copy config/LJSpeech/train.yaml from the reference FastSpeech2 repo here.
+# Then apply the English settings listed in README.md.
