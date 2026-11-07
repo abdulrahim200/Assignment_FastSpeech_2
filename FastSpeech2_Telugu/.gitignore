@@ -1,0 +1,30 @@
+# Source datasets and working copies must remain local / permission-controlled
+data/raw/
+data/processed/
+
+# Model checkpoints and training outputs may exceed ordinary Git limits
+Telugu/checkpoints/*.zip
+Telugu/checkpoints/*.pth
+Telugu/checkpoints/*.pth.tar
+output/
+
+# MFA and training intermediates
+mfa_temp*/
+mfa_root*/
+*.db
+*.sqlite
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Notebooks / local caches
+.ipynb_checkpoints/
+.cache/
+
+# Generated figures/audio should be included only when finalized and reviewed
+Results/Telugu/test_generated_audios/*.wav
+Results/Telugu/variance_adaptor_plots/**/*.png

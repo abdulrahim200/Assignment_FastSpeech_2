@@ -1,0 +1,4 @@
+# Telugu-specific additions used by this submission package.
+# Install PyTorch separately for the target platform/CUDA runtime, then install
+# the upstream ming024/FastSpeech2 requirements.txt as described in README.md.
+-r Telugu/requirements.txt

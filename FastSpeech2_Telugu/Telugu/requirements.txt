@@ -1,0 +1,13 @@
+numpy
+pandas
+scipy
+soundfile
+librosa
+pyworld
+tgt
+praatio
+phonemizer
+regex
+PyYAML
+tqdm
+matplotlib

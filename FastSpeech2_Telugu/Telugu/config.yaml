@@ -1,0 +1,73 @@
+# Telugu-specific project configuration. Paths are resolved from the repository root.
+language: te
+dataset: IndicTTS_Telugu
+reference_implementation: https://github.com/ming024/FastSpeech2
+
+paths:
+  train_manifest: data/manifests/telugu_train.csv
+  validation_manifest: data/manifests/telugu_validation.csv
+  raw_root: data/raw/Telugu
+  processed_root: data/processed/telugu
+  mfa_corpus: data/processed/telugu/mfa_corpus
+  lexicon_dir: data/processed/telugu/lexicon
+  dictionary: data/processed/telugu/lexicon/telugu_mfa_dictionary_reviewed.dict
+  phone_inventory: data/processed/telugu/lexicon/telugu_espeak_ipa_phone_inventory.json
+  acoustic_model: Telugu/checkpoints/telugu_acoustic_model_sat2_recovered.zip
+  train_alignments: data/processed/telugu/mfa_alignments/train_sat2_v1
+  validation_alignments: data/processed/telugu/mfa_alignments/validation_sat2_v1
+  preprocessed: data/processed/telugu/fastspeech2_preprocessed
+  checkpoint_dir: Telugu/checkpoints
+  log_dir: Results/Telugu/logs
+  result_dir: Results/Telugu/test_generated_audios
+
+split:
+  reuse_existing_manifests: true
+  train_recordings: 1544
+  train_hours: 5.003101
+  validation_recordings: 313
+  validation_hours: 1.004286
+  seed_for_new_split_if_ever_needed: 20261107
+  train_validation_overlap: 0
+
+audio:
+  sample_rate: 22050
+  source_sample_rates: [16000, 48000]
+  channels: 1
+  file_subtype: PCM_16
+
+features:
+  filter_length: 1024
+  win_length: 1024
+  hop_length: 256
+  n_mel_channels: 80
+  mel_fmin: 0
+  mel_fmax: 8000
+  pitch_algorithm: pyworld_dio_stonemask
+  pitch_min_hz: 50
+  pitch_max_hz: 600
+  pitch_level: phoneme_level
+  energy_level: phoneme_level
+
+speakers:
+  multi_speaker: true
+  expected_labels: [female, male]
+  # IDs are generated deterministically from sorted speaker labels.
+
+mfa:
+  executable: mfa
+  version_tested: 3.4.3
+  num_jobs: 2
+  openfst_executable: fstcompile
+  recovered_model_status: SAT2_checkpoint_inspected_alignment_smoke_test_passed
+  full_corpus_alignment_status: pending
+
+fastspeech2:
+  restore_step: 0
+  training_mode: pilot
+  total_step: 5000
+  batch_size: 16
+  warm_up_step: 1000
+  max_seq_len: 1000
+  vocoder: HiFi-GAN
+  vocoder_checkpoint_family: universal
+  training_status: not_started

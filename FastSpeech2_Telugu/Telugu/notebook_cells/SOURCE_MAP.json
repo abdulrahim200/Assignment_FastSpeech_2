@@ -1,0 +1,31 @@
+{
+  "notebook": "Telugu_FastSpeech2_Notebook.ipynb",
+  "cell_exports": {
+    "02_telugu_lexicon.py": [
+      33,
+      34,
+      35
+    ],
+    "03_mfa_environment.py": [
+      41
+    ],
+    "04_mfa_train_align.py": [
+      43,
+      44
+    ],
+    "05_acoustic_features.py": [
+      46,
+      47,
+      48
+    ],
+    "06_phone_level_features.py": [
+      50,
+      51,
+      54
+    ],
+    "07_test_sentences.py": [
+      56
+    ]
+  },
+  "warning": "Exports preserve notebook code and dependencies; not every export is standalone."
+}

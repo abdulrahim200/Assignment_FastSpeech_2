@@ -1,0 +1,8 @@
+name: telugu-mfa
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - montreal-forced-aligner=3.4.3
+  - openfst
+  - pip

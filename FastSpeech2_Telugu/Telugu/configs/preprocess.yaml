@@ -1,0 +1,29 @@
+dataset: IndicTTS_Telugu
+path:
+  corpus_path: .
+  lexicon_path: data/processed/telugu/lexicon/telugu_mfa_dictionary_reviewed.dict
+  raw_path: data/processed/telugu/mfa_corpus
+  preprocessed_path: data/processed/telugu/fastspeech2_preprocessed
+preprocessing:
+  val_size: 313
+  text:
+    # Metadata stores aligned IPA phone sequences inside {...}; no English cleaner.
+    text_cleaners: []
+    language: te
+  audio:
+    sampling_rate: 22050
+    max_wav_value: 32768.0
+  stft:
+    filter_length: 1024
+    hop_length: 256
+    win_length: 1024
+  mel:
+    n_mel_channels: 80
+    mel_fmin: 0
+    mel_fmax: 8000
+  pitch:
+    feature: phoneme_level
+    normalization: true
+  energy:
+    feature: phoneme_level
+    normalization: true
