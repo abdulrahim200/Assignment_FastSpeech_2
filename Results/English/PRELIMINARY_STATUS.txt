@@ -1,0 +1,17 @@
+
+ENGLISH RESULTS - PRELIMINARY
+
+These results were generated using FastSpeech 2 checkpoint 5000.
+
+The five generated audio samples and variance-adaptor plots
+currently correspond to the preliminary test sentences used
+during development.
+
+They have NOT yet been regenerated using the exact English
+test sentences specified in the assignment PDF.
+
+Training and validation loss plots are included.
+
+Do not treat the test audio and variance plots as final
+assignment-compliant outputs until the prescribed sentences
+have been processed.
